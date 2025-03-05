@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: sans-serif;
+    font-family: Poppins ;
     background: #EEF2F9;
 }
 button{
@@ -62,6 +62,7 @@ button{
     border-radius: 8px;
     border: none;
     margin-bottom:32px ;
+    font-family: Poppins;
 }
 .add_button{
     margin-top: 35px;
