@@ -32,8 +32,23 @@ a {
   a {
     color: #1f1d2a;
   }
-  li:hover a {
-    border-bottom: 2px solid #1f1d2a;
+  li {
+    position: relative;
+  }
+  li::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: -2px;
+    left: -1px;
+    background-color: #1f1d2a;
+    border-radius: 2px;
+    transition: width ease-in-out 0.5s;
+  }
+  li:hover::after {
+    width: 100%;
   }
 }
 
