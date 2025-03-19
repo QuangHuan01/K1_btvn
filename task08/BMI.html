@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let weight = prompt("can nag");
+      let height = prompt("chieu cao");
+      let bmi = weight / height ** 2;
+      bmi = Number(bmi.toFixed(2));
+
+      switch (true) {
+        case bmi < 18.5:
+          document.write("gay " + bmi);
+          break;
+        case bmi >= 18.5 && bmi <= 23:
+          document.write("Binh thuong " + bmi);
+          break;
+        case bmi >= 23 && bmi <= 25:
+          document.write("Thua can " + bmi);
+          break;
+        case bmi > 28:
+          document.write("Beo Phi " + bmi);
+          break;
+      }
+    </script>
+  </body>
+</html>
