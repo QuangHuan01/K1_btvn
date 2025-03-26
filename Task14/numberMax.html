@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findMaxNumber(a, b, c) {
+        if (a > c && a > b) {
+          document.write(a);
+        } else if (b > c && b > a) {
+          document.write(b);
+        } else if (c > b && c > a) {
+          document.write(c);
+        }
+      }
+
+      // Output:
+      findMaxNumber(3, 5, 2);
+    </script>
+  </body>
+</html>

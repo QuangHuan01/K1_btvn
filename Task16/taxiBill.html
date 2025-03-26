@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function taxiBill(km) {
+        if (km > 0 && km <= 1) {
+          alert("Số tiền phải trả 10000đ");
+        } else if (km > 1 && km <= 30) {
+          alert(`Số tiền phải trả là: ${8000 * km}đ`);
+        } else if (km > 30) {
+          alert(`Số tiền phải trả là: ${7000 * km}đ`);
+        } else {
+          alert("Số km không hợp lệ");
+        }
+      }
+      let km = parseFloat(prompt("Nhập số km: "));
+      if (isNaN(km) || km <= 0) {
+        alert("Vui lòng nhập một số km hợp lệ.");
+      } else {
+        taxiBill(km);
+      }
+    </script>
+  </body>
+</html>

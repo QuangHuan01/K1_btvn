@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isSameSign(a, b) {
+        if (a > 0 && b > 0) {
+          document.write(`<br>${a} va ${b} ` + true);
+        } else if (a < 0 && b < 0) {
+          document.write(`<br>${a} va ${b} ` + true);
+        } else {
+          document.write("<br>" + false);
+        }
+      }
+
+      // Test cases
+      let x = parseInt(prompt("Nhap a: "));
+      let y = parseInt(prompt("Nhap b: "));
+      isSameSign(x, y);
+    </script>
+  </body>
+</html>
