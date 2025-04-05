@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arrayNumber = [1, 2, 3, 4, 3, 2, 1];
+      const arrayNumber1 = [1, 1, 3, 4, 3, 2, 1];
+      function checkSymmetricalArr(arr) {
+        let result = Boolean;
+        for (let i = 0; i < arr.length / 2; i++) {
+          if (arr[i] != arr[arr.length - i - 1]) {
+            result = false;
+            return result;
+          }
+        }
+        if (result) {
+          result = true;
+          return result;
+        }
+      }
+      const result = checkSymmetricalArr(arrayNumber);
+      const result1 = checkSymmetricalArr(arrayNumber1);
+      document.write(`<h1>${result}</h1>`);
+      document.write(`<h1>${result1}</h1>`);
+    </script>
+  </body>
+</html>
