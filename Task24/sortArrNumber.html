@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const number = [4, 2, 7, 6, 5, 8, 2, 1];
+      console.log(number);
+      document.write(`<h1>${number}</h1>`);
+      function sortArrNumber(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+              let so = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = so;
+            }
+          }
+        }
+        return arr;
+      }
+      document.write(`<h1>${sortArrNumber(number)}</h1>`);
+      console.log(sortArrNumber(number));
+    </script>
+  </body>
+</html>
