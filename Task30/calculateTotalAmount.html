@@ -21,7 +21,7 @@
       ];
       function calculateTotalAmount(array, amount) {
         const result = array.reduce((acc, cur) => {
-          if (cur.amount > amount || cur.status == "completed") {
+          if (cur.amount > amount && cur.status === "completed") {
             acc += cur.amount;
             cur.status = "completed";
           }
@@ -30,6 +30,7 @@
         console.log(result);
       }
       calculateTotalAmount(orders, 100);
+      calculateTotalAmount(orders, 150);
       console.log(orders);
     </script>
   </body>
