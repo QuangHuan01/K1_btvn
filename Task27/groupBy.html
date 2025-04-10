@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        { fullname: "Nguyen Van A", age: 20, address: "LangSon" },
+        { fullname: "Nguyen Van B", age: 22, address: "BacGiang" },
+        { fullname: "Nguyen Van C", age: 21, address: "HaNoi" },
+        { fullname: "Nguyen Van D", age: 22, address: "HaNoi" },
+        { fullname: "Nguyen Van E", age: 32, address: "LangSon" },
+      ];
+      function groupByAge(user) {
+        const arrAge = structuredClone(user);
+        arrAge.sort((a, b) => a.age - b.age);
+        console.log(arrAge);
+      }
+      groupByAge(users);
+      function groupByName(user) {
+        const arrName = structuredClone(user);
+        arrName.sort((a, b) => a.fullname - a.fullname && -1);
+        console.log(arrName);
+      }
+      groupByName(users);
+    </script>
+  </body>
+</html>
