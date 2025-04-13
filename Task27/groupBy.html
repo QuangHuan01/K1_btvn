@@ -14,18 +14,20 @@
         { fullname: "Nguyen Van D", age: 22, address: "HaNoi" },
         { fullname: "Nguyen Van E", age: 32, address: "LangSon" },
       ];
-      function groupByAge(user) {
-        const arrAge = structuredClone(user);
-        arrAge.sort((a, b) => a.age - b.age);
-        console.log(arrAge);
+
+      function groupBy(user, key) {
+        let result = user.reduce((acc, cur) => {
+          let groupKey = cur[key];
+          if (!acc[groupKey]) {
+            acc[groupKey] = [];
+          }
+          acc[groupKey].push(cur);
+          return acc;
+        }, {});
+        return result;
       }
-      groupByAge(users);
-      function groupByName(user) {
-        const arrName = structuredClone(user);
-        arrName.sort((a, b) => a.fullname - a.fullname && -1);
-        console.log(arrName);
-      }
-      groupByName(users);
+      console.log(groupBy(users, "age"));
+      console.log(groupBy(users, "address"));
     </script>
   </body>
 </html>
