@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arrayString = ["name:John", "age:30", "city:NY"];
+
+      function convertArrayToObject(array) {
+        // Logic bài toán và trả về ết quả
+        return array.reduce((acc, curr) => {
+          let [key, value] = curr.split(":");
+          acc[key] = value;
+          return acc;
+        }, {});
+      }
+      //Test
+      console.log(convertArrayToObject(arrayString));
+      convertArrayToObject(arrayString); // { name: 'John', age: '30', city: 'NY' }
+    </script>
+  </body>
+</html>

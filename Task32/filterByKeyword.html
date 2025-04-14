@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arrayString = ["JavaScript", "java", "Python", "Ruby"];
+      let keyWord = "ja";
+
+      function filterByKeyword(arrayString, keyWord) {
+        // Logic bài toán và trả về kết quả
+        return arrayString.filter((str) => str.toLowerCase().includes(keyWord));
+      }
+      // Test
+      console.log(filterByKeyword(arrayString, keyWord));
+      filterByKeyword(arrayString, keyWord); //["JavaScript", "java"]
+    </script>
+  </body>
+</html>

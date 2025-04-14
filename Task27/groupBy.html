@@ -16,7 +16,7 @@
       ];
 
       function groupBy(user, key) {
-        let result = user.reduce((acc, cur) => {
+        return user.reduce((acc, cur) => {
           let groupKey = cur[key];
           if (!acc[groupKey]) {
             acc[groupKey] = [];
@@ -24,7 +24,6 @@
           acc[groupKey].push(cur);
           return acc;
         }, {});
-        return result;
       }
       console.log(groupBy(users, "age"));
       console.log(groupBy(users, "address"));
