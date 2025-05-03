@@ -1,8 +1,9 @@
+let todos = JSON.parse(localStorage.getItem("todos") || "[]");
 const todoInput = document.getElementById("todoInput");
 const errorMessage = document.getElementById("errorMessage");
 const todoList = document.getElementById("todoList");
-let todos = [];
 let currentFilter = "all";
+
 console.log(todoInput);
 //!
 function generateId(length, prefix) {
@@ -35,6 +36,8 @@ function addTodo() {
   };
   todos.push(todo);
   todoInput.value = "";
+  filterTodos(todos);
+  localStorage.setItem("todos", JSON.stringify(todos));
   renderTodos();
 }
 //!
@@ -61,13 +64,12 @@ function deleteTodo(id) {
 function startEdit(id) {
   const todo = todos.find((todo) => todo.id === id);
   const li = document.querySelector(`li[data-id="${id}"]`);
-  li.innerHTML = `<span class="status ${
-    todo.completed ? "completed" : "active"
-  }" 
+  li.innerHTML = `
+  <input type="text" class="edit-input" value="${todo.text}">
+  <span class="status ${todo.completed ? "completed" : "active"}" 
               onclick="toggleStatus('${todo.id}')">
           ${todo.completed ? "Completed" : "Active"}
         </span>
-        <input type="text" class="edit-input" value="${todo.text}">
         <button class="edit" onclick="saveEdit('${todo.id}')">Save</button>
         <button class="delete" onclick="renderTodos()">Cancel</button>`;
   const editInput = li.querySelector(".edit-input");
@@ -83,12 +85,14 @@ function saveEdit(id) {
     todo.text = newTodo;
   }
   renderTodos();
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 //!
 function toggleStatus(id) {
   const todo = todos.find((todo) => todo.id === id);
   todo.completed = !todo.completed;
   renderTodos();
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 //!
 function renderTodos() {
@@ -106,11 +110,12 @@ function renderTodos() {
     li.className = `todo-item ${todo.completed ? "completed" : ""}`;
     li.setAttribute("data-id", todo.id);
     li.innerHTML = `
+          <span class="task-id">${todo.id}</span>
+          <span class="task-text">${todo.text}</span>
           <span class="status ${todo.completed ? "completed" : "active"}" 
           onclick="toggleStatus('${todo.id}')">
           ${todo.completed ? "Completed" : "Active"}
           </span>
-          <span class="task-text">${todo.text}</span>
           <button class="edit" onclick="startEdit('${todo.id}')">Edit</button>
           <button class="delete" onclick="deleteTodo('${
             todo.id
@@ -119,3 +124,4 @@ function renderTodos() {
     todoList.appendChild(li);
   });
 }
+filterTodos(todos);

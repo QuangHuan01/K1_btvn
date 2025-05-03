@@ -86,6 +86,16 @@ button:hover {
   font-size: 16px;
   color: #1f2937;
 }
+.todo-item.completed span.task-id {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+.todo-item span.task-id {
+  flex: 1;
+  max-width: 60px;
+  font-size: 10px;
+  color: #1f2937;
+}
 .todo-item .status {
   padding: 5px 10px;
   border-radius: 5px;

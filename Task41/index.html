@@ -17,9 +17,9 @@
         <div id="errorMessage" class="error-message">Vui lòng nhập công việc!</div>
       </div>
       <div class="filter-section">
-        <button onclick="filterTodos('all')" class="active">Tất cả</button>
-        <button onclick="filterTodos('active')">Chưa hoàn thành</button>
-        <button onclick="filterTodos('completed')">Hoàn thành</button>
+        <button data-filter="all" class="active" onclick="filterTodos('all')">All</button>
+<button data-filter="active" onclick="filterTodos('active')">Active</button>
+<button data-filter="completed" onclick="filterTodos('completed')">Completed</button>
       </div>
       <ul class="todo-list" id="todoList">
       </ul>
