@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: linear-gradient(
+          135deg,
+          #f5f7fa 0%,
+          #c3cfe2 100%
+        ); /* Soft, elegant gradient */
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 30px;
+        perspective: 1000px; /* Subtle 3D effect */
+      }
+
+      li {
+        position: relative;
+        transform-style: preserve-3d;
+      }
+
+      a {
+        text-decoration: none;
+        color: #1a1a1a; /* Deep charcoal for contrast */
+        font-size: 20px;
+        font-weight: 500;
+        display: inline-block;
+        padding: 15px 30px;
+        position: relative;
+        background: linear-gradient(
+          45deg,
+          #ffffff,
+          #e6e6e6
+        ); /* Glassy white-silver */
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1),
+          inset 0 0 10px rgba(255, 255, 255, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background 0.3s ease;
+        z-index: 1;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      /* Hover: Glassy shine and lift */
+      a:hover {
+        transform: translateY(-5px) rotateX(5deg); /* Gentle 3D lift */
+        background: linear-gradient(
+          45deg,
+          #ffffff,
+          #f0f0f0
+        ); /* Brighter shine */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+          inset 0 0 15px rgba(255, 255, 255, 0.7);
+        color: #b8860b; /* Golden accent */
+      }
+
+      /* Reflective underline effect */
+      a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #b8860b,
+          transparent
+        ); /* Golden glow */
+        transition: width 0.3s ease;
+        border-radius: 1px;
+        box-shadow: 0 0 10px rgba(184, 134, 11, 0.5);
+      }
+
+      a:hover::after {
+        width: 70%; /* Elegant underline expands */
+      }
+
+      /* Glass reflection effect */
+      a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        opacity: 0.3;
+        transition: opacity 0.3s ease;
+        border-radius: 12px;
+        z-index: -1;
+      }
+
+      a:hover::before {
+        opacity: 0.6; /* Enhanced glass reflection */
+      }
+
+      /* Subtle shine animation */
+      @keyframes shine {
+        0% {
+          background-position: -200%;
+        }
+        100% {
+          background-position: 200%;
+        }
+      }
+
+      a:hover {
+        background: linear-gradient(45deg, #ffffff, #e6e6e6, #ffffff);
+        animation: shine 1.5s ease infinite;
+        background-size: 200%;
+      }
+
+      /* Micro-pulse for luxury feel */
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: translateY(-5px) rotateX(5deg);
+        }
+        50% {
+          transform: translateY(-7px) rotateX(5deg);
+        }
+      }
+
+      a:hover {
+        animation: shine 1.5s ease infinite, pulse 1.2s ease infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="bai1.html">Bài 1</a></li>
+      <li><a href="bai2.html">Bài 2</a></li>
+      <li><a href="bai3.html">Bài 3</a></li>
+    </ul>
+  </body>
+</html>
