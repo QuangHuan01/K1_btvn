@@ -85,6 +85,7 @@ button:hover {
   flex: 1;
   font-size: 16px;
   color: #1f2937;
+  margin-left: 10px;
 }
 .todo-item.completed span.task-id {
   text-decoration: line-through;
@@ -92,9 +93,22 @@ button:hover {
 }
 .todo-item span.task-id {
   flex: 1;
-  max-width: 60px;
+  max-width: 30px;
   font-size: 10px;
   color: #1f2937;
+  position: relative;
+}
+.todo-item span.task-id::after {
+  content: "";
+  background-color: #d1d5db;
+  width: 1px;
+  height: 45px;
+  display: inline-block;
+  margin-left: 3px;
+  top: -10px;
+  left: 30px;
+  border-radius: 5px;
+  position: absolute;
 }
 .todo-item .status {
   padding: 5px 10px;

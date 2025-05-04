@@ -44,9 +44,9 @@ function addTodo() {
 function filterTodos(filter) {
   currentFilter = filter;
   document.querySelectorAll(".filter-section button").forEach((btn) => {
-    btn.classList.remove("active");
-    if (btn.textContent.toLocaleLowerCase() === filter) {
-      btn.classList.add("active");
+    btn.classList.add("active");
+    if (btn.textContent.toLocaleLowerCase() !== filter) {
+      btn.classList.remove("active");
     }
   });
   renderTodos();
@@ -59,6 +59,7 @@ function deleteTodo(id) {
     todos = todos.filter((todo) => todo.id != id);
   }
   renderTodos();
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 //!
 function startEdit(id) {
@@ -66,14 +67,11 @@ function startEdit(id) {
   const li = document.querySelector(`li[data-id="${id}"]`);
   li.innerHTML = `
   <input type="text" class="edit-input" value="${todo.text}">
-  <span class="status ${todo.completed ? "completed" : "active"}" 
-              onclick="toggleStatus('${todo.id}')">
-          ${todo.completed ? "Completed" : "Active"}
-        </span>
         <button class="edit" onclick="saveEdit('${todo.id}')">Save</button>
         <button class="delete" onclick="renderTodos()">Cancel</button>`;
   const editInput = li.querySelector(".edit-input");
   editInput.focus();
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 //!
 function saveEdit(id) {
