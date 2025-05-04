@@ -86,6 +86,8 @@ button:hover {
   font-size: 16px;
   color: #1f2937;
   margin-left: 10px;
+  max-width: 240px;
+  word-break: break-all;
 }
 .todo-item.completed span.task-id {
   text-decoration: line-through;
