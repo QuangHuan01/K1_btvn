@@ -90,8 +90,7 @@ button:hover {
   word-break: break-all;
 }
 .todo-item.completed span.task-id {
-  text-decoration: line-through;
-  color: #6b7280;
+  color: #a1a7b3;
 }
 .todo-item span.task-id {
   flex: 1;

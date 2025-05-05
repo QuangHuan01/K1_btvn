@@ -51,7 +51,7 @@ function filterTodos(filter) {
   });
   renderTodos();
 }
-//!
+//! DELETE
 function deleteTodo(id) {
   const deletetd = confirm("Bạn Chắc Chắn Muốn Xóa?");
   console.log(deletetd);
