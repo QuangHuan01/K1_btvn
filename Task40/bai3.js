@@ -17,10 +17,10 @@ function getPurchases(userId) {
   });
 }
 
-function getProductDetails(productId, productName, productPrice) {
+function getProductDetails(product) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve({ id: productId, name: productName, price: productPrice });
+      resolve({ id: product.id, name: product.product, price: product.price });
     }, 1000);
   });
 }
@@ -31,22 +31,17 @@ async function productData() {
     console.log("Bài 3", user);
     const productList = await getPurchases(user.id);
     console.log("Bài 3", productList);
-    for (const product of productList) {
-      const productDetail = await getProductDetails(
-        product.id,
-        product.product,
-        product.price
-      );
+    let count = 0;
+    let sum = 0;
+    productList.forEach(async (product) => {
+      const productDetail = await getProductDetails(product);
       console.log("Bài 3", productDetail);
-    }
-    const totalPrice = productList.reduce((acc, curr) => {
-      acc += curr.price;
-      return acc;
-    }, 0);
-    setTimeout(() => {
-      console.log("Bài 3 Tổng Tiền:", totalPrice);
-      console.log("============");
-    }, 1000);
+      sum += product.price;
+      count++;
+      if (count === productList.length) {
+        console.log("Bài 3 Tổng là ", sum);
+      }
+    });
   } catch (error) {
     console.log(error);
   }
