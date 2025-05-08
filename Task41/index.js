@@ -20,7 +20,7 @@ console.log(generateId(4, "todo-"));
 //!
 function addTodo() {
   const taskText = todoInput.value.trim();
-  if (taskText === "") {
+  if (taskText.trim() === "") {
     errorMessage.style.display = "block";
     todoInput.style.boxShadow = "0 0 5px rgba(255, 26, 26, 0.5)";
     todoInput.classList.add("error");

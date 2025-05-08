@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quản lý sinh viên</h1>
+      <div class="form-container">
+        <table>
+          <tr>
+            <th>Họ Tên</th>
+            <th>Điểm Toán</th>
+            <th>Điểm Anh</th>
+            <th>Điểm KH</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td><input id="name" type="text" placeholder="Nhập họ tên" /></td>
+            <td>
+              <input id="math" type="number" min="0" placeholder="0-10" />
+            </td>
+            <td>
+              <input id="english" type="number" min="0" placeholder="0-10" />
+            </td>
+            <td>
+              <input id="science" type="number" min="0" placeholder="0-10" />
+            </td>
+            <td>
+              <button id="addStudent" onclick="add()">Thêm</button>
+              <button id="huy-btn" style="display: none">Hủy</button>
+            </td>
+          </tr>
+        </table>
+        <div id="error" style="display: none"></div>
+        <div id="success" style="display: none"></div>
+      </div>
+      <div class="filter-container">
+        <input
+          type="text"
+          id="search"
+          placeholder="Tìm kiếm theo tên"
+          onkeyup="searchStudents()"
+        />
+        <select id="sort" onchange="sortStudents()">
+          <option value="">Không sắp xếp</option>
+          <option value="avg-desc">Điểm TB: Cao → Thấp</option>
+          <option value="avg-asc">Điểm TB: Thấp → Cao</option>
+        </select>
+        <select id="filter" onchange="filterStudents()">
+          <option value="">Tất cả học lực</option>
+          <option value="Giỏi">Giỏi</option>
+          <option value="Khá">Khá</option>
+          <option value="TB">Trung bình</option>
+          <option value="Yếu">Yếu</option>
+        </select>
+      </div>
+      <table class="table" id="tableStudent"></table>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

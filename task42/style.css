@@ -1,0 +1,240 @@
+/* General styling for the container */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #e8ecef;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Heading styling */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 35px;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+}
+
+/* Form container styling */
+.form-container {
+  margin-bottom: 25px;
+}
+
+.form-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container th,
+.form-container td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #d1d8de;
+}
+
+.form-container th {
+  background-color: #34495e;
+  color: #ecf0f1;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #f9fbfc;
+  transition: all 0.3s ease;
+}
+
+.form-container input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+  background-color: #fff;
+}
+
+.form-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.form-container #addStudent {
+  background-color: #2980b9;
+  color: #ecf0f1;
+}
+
+.form-container #addStudent:hover {
+  background-color: #2471a3;
+  transform: translateY(-2px);
+}
+
+.form-container #huy-btn {
+  background-color: #c0392b;
+  color: #ecf0f1;
+}
+
+.form-container #huy-btn:hover {
+  background-color: #a93226;
+  transform: translateY(-2px);
+}
+
+#error {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 12px;
+  color: #d34535;
+  font-weight: 500;
+}
+#success {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #3da92a;
+  font-weight: 500;
+}
+
+/* Filter container styling */
+.filter-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-container input,
+.filter-container select {
+  padding: 12px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #f9fbfc;
+  transition: all 0.3s ease;
+  width: 220px;
+}
+
+.filter-container input:focus,
+.filter-container select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+  background-color: #fff;
+}
+
+/* Student table styling */
+#tableStudent {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#tableStudent th,
+#tableStudent td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #d1d8de;
+}
+
+#tableStudent th {
+  background-color: #34495e;
+  color: #ecf0f1;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+#tableStudent tr {
+  transition: background-color 0.3s ease;
+}
+
+#tableStudent tr:hover {
+  background-color: #ecf0f1;
+}
+
+#tableStudent button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+#tableStudent button:first-child {
+  background-color: #f1c40f;
+  color: #2c3e50;
+}
+
+#tableStudent button:first-child:hover {
+  background-color: #d4ac0d;
+  transform: translateY(-2px);
+}
+
+#tableStudent button:last-child {
+  background-color: #c0392b;
+  color: #ecf0f1;
+}
+
+#tableStudent button:last-child:hover {
+  background-color: #a93226;
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-container input,
+  .filter-container select {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .form-container table,
+  #tableStudent {
+    font-size: 0.85rem;
+  }
+
+  .form-container th,
+  .form-container td,
+  #tableStudent th,
+  #tableStudent td {
+    padding: 10px;
+  }
+
+  .form-container button,
+  #tableStudent button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
