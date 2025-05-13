@@ -1,0 +1,150 @@
+/* Thiết lập chung */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Container chính */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Tiêu đề */
+h1.text-center {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #343a40;
+  margin-bottom: 2rem;
+}
+
+/* Thanh phân trang */
+.pagination {
+  margin-bottom: 2rem;
+}
+
+.page-link {
+  font-size: 1rem;
+  color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+/* Thanh tìm kiếm và sắp xếp */
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* Card sản phẩm */
+#product .col {
+  transition: transform 0.3s;
+}
+
+#product .col:hover {
+  transform: translateY(-5px);
+}
+
+#product .img-fluid {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#product .content {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#product h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#product p {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#product .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+#product .btn-primary {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #007bff;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+#product .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1.text-center {
+    font-size: 2rem;
+  }
+
+  #product .img-fluid {
+    height: 150px;
+  }
+
+  #product h3 {
+    font-size: 1.1rem;
+  }
+
+  #product p {
+    font-size: 0.85rem;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 0.9rem;
+  }
+}

@@ -126,10 +126,7 @@ function update(id) {
 //?----------------------
 function searchStudents() {
   const search = document.getElementById("search").value.toLowerCase();
-  if (search === "") {
-    renderTable(filterStudents);
-    return;
-  }
+
   const filterStudents = dataStudents.filter((student) =>
     student.name.toLowerCase().includes(search.trim())
   );
